@@ -9,6 +9,7 @@ It allows users to generate strong, customizable passwords with real-time streng
 
 - 🔒 **Secure password generation** using the Web Crypto API (true randomness)
 - ⚙️ **Customizable options** – adjust length and include/exclude characters
+- 🔐 No login required – everything works without creating an account
 - 🌗 **Dark & light mode** with theme memory (localStorage)
 - 📊 **Real-time strength meter** showing entropy
 - 💾 **Password history** – save, copy, delete, clear, or export as CSV
