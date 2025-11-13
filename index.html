@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeMate</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>SafeMate</h1>
+        <button id="theme-toggle" aria-label="Toggle dark/light theme">🌙</button>
+    </header>
+    <main>
+        <div class="card">
+            <section class="controls">
+                <h2>Password Options</h2>
+                <div class="option">
+                    <label for="length-slider">Length: <span id="length-value">12</span></label>
+                    <input type="range" id="length-slider" min="4" max="64" value="12" aria-describedby="length-value">
+                </div>
+                <div class="toggles">
+                    <button class="toggle" id="uppercase-toggle" aria-pressed="true">Uppercase</button>
+                    <button class="toggle" id="lowercase-toggle" aria-pressed="true">Lowercase</button>
+                    <button class="toggle" id="numbers-toggle" aria-pressed="true">Numbers</button>
+                    <button class="toggle" id="symbols-toggle" aria-pressed="true">Symbols</button>
+                </div>
+                <div class="toggles">
+                    <button class="toggle" id="exclude-similar-toggle" aria-pressed="false">Exclude Similar</button>
+                    <button class="toggle" id="exclude-ambiguous-toggle" aria-pressed="false">Exclude Ambiguous</button>
+                </div>
+            </section>
+            <section class="result-history">
+                <div class="result">
+                    <h2>Generated Password</h2>
+                    <div id="password-display" class="password-box" aria-live="polite"></div>
+                    <div class="strength-meter">
+                        <div id="strength-bar" class="strength-bar"></div>
+                        <span id="strength-label">Fair</span>
+                        <span id="entropy-value">Entropy: 0 bits</span>
+                    </div>
+                    <div class="buttons">
+                        <button class= "other_button" id="copy-btn" aria-label="Copy password to clipboard">Copy</button>
+                        <button class= "other_button" id="regenerate-btn" aria-label="Generate new password">Regenerate</button>
+                        <button class= "other_button" id="save-btn" aria-label="Save to history">Save</button>
+                    </div>
+                </div>
+                <div class="history">
+                    <h2>Password History</h2>
+                    <ul id="history-list"></ul>
+                    <div class="history-buttons">
+                        <button class= "other_button" id="clear-history-btn" aria-label="Clear all history">Clear History</button>
+                        <button class= "other_button" id="export-csv-btn" aria-label="Export history as CSV">Export CSV</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <div id="toast" class="toast" aria-live="assertive" role="alert"></div>
+    <script src="script.js"></script>
+</body>
+</html>

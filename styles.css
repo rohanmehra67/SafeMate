@@ -1,0 +1,252 @@
+/* CSS Variables for themes */
+:root { 
+    --bg-image: url('images/light mode.jpg');
+    --bg-color: white; 
+    --text-color: #333333;
+    --card-bg: rgba(0,0,0,0.2);
+    --border-color: #dddddd;
+    --accent-color: #007bff;
+    --active-toggle: #0056b3;
+    --weak: #ff4d4d;
+    --fair: #ffa500;
+    --good: #ffff00;
+    --strong: #32cd32;
+    --button-bg: #f0f0f0;
+    --button-hover: #e0e0e0;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+body.dark {
+    --bg-image: url('images/dark mode.png');
+    --bg-color: rgb(29, 26, 26);
+    --text-color: #ffffff;
+    --card-bg: rgba(224, 218, 218, 0.1);
+    --border-color: #333333;
+    --accent-color: #4dabf7;
+    --active-toggle: #1e88e5;
+    --weak: #ff6b6b;
+    --fair: #ffb74d;
+    --good: #fff176;
+    --strong: #81c784;
+    --button-bg: #2a2a2a;
+    --button-hover: #3a3a3a;
+    --shadow: rgba(255, 255, 255, 0.1);
+}
+
+/* Global styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+    /* background-color: var(--bg-color); */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+#theme-toggle:hover {
+    background-color: var(--button-hover);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow);
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+.controls {
+    flex: 1;
+    margin-right: 2rem;
+}
+
+.result-history {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.result, .history {
+    margin-bottom: 2rem;
+}
+
+.option {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+input[type="range"] {
+    width: 100%;
+}
+
+.toggles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.toggle {
+    background-color: var(--button-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.toggle:hover {
+    background-color: var(--button-hover);
+}
+
+.toggle[aria-pressed="true"] {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.password-box {
+    font-family: 'Courier New', monospace;
+    font-size: 1.2rem;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    word-break: break-all;
+}
+
+.strength-meter {
+    margin-bottom: 1rem;
+}
+
+.strength-bar {
+    height: 8px;
+    background-color: var(--border-color);
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    transition: width 0.3s;
+}
+
+.buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+button {
+    color: var(--text-color);
+    background-color: var(--button-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--button-hover);
+}
+
+.other_button{
+    border-radius: 20px;
+}
+
+.history ul {
+    list-style: none;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.history li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.history .password {
+    font-family: 'Courier New', monospace;
+    flex: 1;
+}
+
+.history .timestamp {
+    font-size: 0.8rem;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+.history-buttons {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+}
+
+.toast {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 1rem;
+    border-radius: 4px;
+    display: none;
+    z-index: 1000;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .card {
+        flex-direction: row;
+    }
+    .controls {
+        margin-right: 2rem;
+        margin-bottom: 0;
+    }
+}
