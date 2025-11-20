@@ -27,7 +27,7 @@ It allows users to generate strong, customizable passwords with real-time streng
 
 ---
 ## 🌐 Live Demo
-[![Live Site](https://img.shields.io/badge/SafeMate-Live%20Demo-brightgreen)]()
+[![Cloick Here](https://img.shields.io/badge/SafeMate-Live%20Demo-brightgreen)](https://safe-mate-eta.vercel.app/)
 
 ---
 
