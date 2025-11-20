@@ -26,6 +26,10 @@ It allows users to generate strong, customizable passwords with real-time streng
 - LocalStorage  
 
 ---
+## 🌐 Live Demo
+[![Live Site](https://img.shields.io/badge/SafeMate-Live%20Demo-brightgreen)]()
+
+---
 
 ## ⚙️ How to Run Locally
 
